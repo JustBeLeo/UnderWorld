@@ -1,0 +1,303 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Scene/Build/BuildPage.gd" type="Script" id=1]
+[ext_resource path="res://module/BackGroundNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asserts/Images/back.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Build/Asserts/icon_metro_head_fill.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Build/Asserts/icon_metro_body.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Build/Asserts/icon_already_have_fill.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Build/Asserts/msyh.tres" type="DynamicFontData" id=7]
+[ext_resource path="res://Scene/Build/Asserts/icon_not_have.png" type="Texture" id=8]
+[ext_resource path="res://module/metroSC.tscn" type="PackedScene" id=9]
+[ext_resource path="res://module/pop.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.682353 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.745098, 0.0627451, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Asserts/ttf/汉仪细等线.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 1
+outline_color = Color( 0.964706, 0.796078, 0.345098, 1 )
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Asserts/ttf/msyh.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="Theme" id=19]
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = SubResource( 9 )
+HScrollBar/styles/grabber_highlight = SubResource( 10 )
+HScrollBar/styles/grabber_pressed = SubResource( 11 )
+HScrollBar/styles/scroll = SubResource( 12 )
+HScrollBar/styles/scroll_focus = SubResource( 13 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 14 )
+VScrollBar/styles/grabber_highlight = SubResource( 15 )
+VScrollBar/styles/grabber_pressed = SubResource( 16 )
+VScrollBar/styles/scroll = SubResource( 17 )
+VScrollBar/styles/scroll_focus = SubResource( 18 )
+
+[node name="BuildPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGroundNode" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4.61475, -22.2875 )
+
+[node name="changeMode" type="TextureButton" parent="."]
+margin_left = 717.497
+margin_top = 850.926
+margin_right = 1052.5
+margin_bottom = 945.926
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="changeDecorate" type="Panel" parent="changeMode"]
+margin_right = 329.004
+margin_bottom = 90.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="changeMode"]
+margin_left = 32.7279
+margin_top = 15.1052
+margin_right = 301.728
+margin_bottom = 64.1052
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.94902, 0.678431, 0.180392, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.843137, 0.443137, 1 )
+text = "更改车厢内饰"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.05
+
+[node name="back" type="TextureButton" parent="Top"]
+margin_left = 31.2402
+margin_top = 24.5458
+margin_right = 231.24
+margin_bottom = 224.546
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Top"]
+margin_left = 145.044
+margin_top = 22.3144
+margin_right = 325.044
+margin_bottom = 82.3144
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "基建页面"
+
+[node name="panel_bottom" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 969.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="switchBar" type="Control" parent="panel_bottom"]
+anchor_right = 1.0
+margin_top = 11.0
+margin_bottom = 111.0
+
+[node name="metro_head" type="TextureButton" parent="panel_bottom/switchBar"]
+margin_top = -3.0
+margin_right = 498.0
+margin_bottom = 103.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="img" type="TextureRect" parent="panel_bottom/switchBar/metro_head"]
+margin_left = 174.0
+margin_top = 28.0
+margin_right = 264.0
+margin_bottom = 90.0
+texture = ExtResource( 4 )
+
+[node name="metro_body" type="TextureButton" parent="panel_bottom/switchBar"]
+margin_left = 579.033
+margin_top = -5.51746
+margin_right = 1077.03
+margin_bottom = 100.483
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="img" type="TextureRect" parent="panel_bottom/switchBar/metro_body"]
+margin_left = 174.0
+margin_top = 28.0
+margin_right = 265.0
+margin_bottom = 91.0
+texture = ExtResource( 5 )
+
+[node name="switchBar2" type="Control" parent="panel_bottom"]
+anchor_right = 1.0
+margin_top = 834.146
+margin_bottom = 934.146
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="alreadyHave" type="TextureButton" parent="panel_bottom/switchBar2"]
+margin_left = -0.530701
+margin_right = 539.469
+margin_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="panel_bottom/switchBar2/alreadyHave"]
+margin_left = 96.3926
+margin_top = 20.9502
+margin_right = 156.393
+margin_bottom = 85.9502
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="panel_bottom/switchBar2/alreadyHave"]
+margin_left = 216.89
+margin_top = 31.212
+margin_right = 336.89
+margin_bottom = 85.212
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.0156863, 0.737255, 0.866667, 1 )
+text = "已拥有"
+
+[node name="NotHave" type="TextureButton" parent="panel_bottom/switchBar2"]
+margin_left = 540.0
+margin_right = 1080.0
+margin_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="panel_bottom/switchBar2/NotHave"]
+margin_left = 106.843
+margin_top = 26.2943
+margin_right = 166.843
+margin_bottom = 91.2943
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="panel_bottom/switchBar2/NotHave"]
+margin_left = 251.177
+margin_top = 29.3931
+margin_right = 371.177
+margin_bottom = 83.3931
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.690196, 0.690196, 0.690196, 1 )
+text = "未拥有"
+
+[node name="Line2D" type="Line2D" parent="panel_bottom/switchBar2"]
+position = Vector2( 12, -31.3708 )
+scale = Vector2( 1, 1.1612 )
+points = PoolVector2Array( 526.419, 26.4486, 526.419, 114.628 )
+width = 2.0
+default_color = Color( 0.882353, 0.882353, 0.882353, 1 )
+texture_mode = -32871270
+
+[node name="metroSC" parent="." instance=ExtResource( 9 )]
+margin_left = -319.0
+margin_top = 597.0
+margin_right = 1074.0
+margin_bottom = 853.0
+
+[node name="SC" type="ScrollContainer" parent="."]
+margin_left = 77.851
+margin_top = 1124.21
+margin_right = 1008.85
+margin_bottom = 1755.21
+theme = SubResource( 19 )
+scroll_horizontal_enabled = false
+scroll_deadzone = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GC" type="GridContainer" parent="SC"]
+custom_constants/vseparation = 80
+custom_constants/hseparation = 120
+columns = 3
+
+[node name="pop" parent="." instance=ExtResource( 10 )]
+margin_left = 150.379
+margin_top = 565.089
+margin_right = 970.379
+margin_bottom = 1360.09
+
+[node name="item" parent="pop" index="0"]
+stretch_mode = 6
+[connection signal="pressed" from="Top/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="panel_bottom/switchBar/metro_head" to="." method="_on_metro_head_pressed"]
+[connection signal="pressed" from="panel_bottom/switchBar/metro_body" to="." method="_on_metro_body_pressed"]
+[connection signal="pressed" from="panel_bottom/switchBar2/alreadyHave" to="." method="_on_alreadyHave_pressed"]
+[connection signal="pressed" from="panel_bottom/switchBar2/NotHave" to="." method="_on_NotHave_pressed"]
+[connection signal="gui_input" from="SC" to="." method="_on_SC_gui_input"]
+
+[editable path="pop"]

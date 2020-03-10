@@ -1,0 +1,503 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scene/Shop/ShopNode.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Shop/Asserts/shop_background.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Shop/Asserts/shop_bottom_backguroud.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Shop/Asserts/shop_background1.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Shop/Asserts/shop_middle_background.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Shop/Asserts/shop_top_background.png" type="Texture" id=6]
+[ext_resource path="res://module/pop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/Shop/Asserts/shop_user_diamond.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Shop/Asserts/shop_user_coin.png" type="Texture" id=9]
+[ext_resource path="res://Scene/Shop/Asserts/shop_item_background.png" type="Texture" id=10]
+[ext_resource path="res://Asserts/Images/back.png" type="Texture" id=11]
+[ext_resource path="res://Asserts/Images/item_coins.png" type="Texture" id=12]
+[ext_resource path="res://Scene/Shop/Lottery.tscn" type="PackedScene" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.133333, 0.419608, 0.701961, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 44
+use_mipmaps = true
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.945098, 0.972549, 0.992157, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 44
+outline_color = Color( 0.133333, 0.419608, 0.701961, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 44
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 40
+font_data = SubResource( 9 )
+
+[node name="ShopNode" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="shop_background" type="Sprite" parent="Background"]
+position = Vector2( 540, 960 )
+texture = ExtResource( 2 )
+
+[node name="shop_bottom_backguroud" type="Sprite" parent="Background"]
+position = Vector2( 543.231, 965.045 )
+scale = Vector2( 1.01591, 1.00526 )
+texture = ExtResource( 3 )
+
+[node name="shop_background1" type="Sprite" parent="Background"]
+position = Vector2( 537.863, 87.2645 )
+texture = ExtResource( 4 )
+
+[node name="shop_middle_background" type="Sprite" parent="Background"]
+position = Vector2( 541.226, 377.892 )
+texture = ExtResource( 5 )
+
+[node name="shop_top_background" type="Sprite" parent="Background"]
+position = Vector2( 541.226, 137.718 )
+texture = ExtResource( 6 )
+
+[node name="TabBar" type="Control" parent="."]
+margin_top = -1.0
+margin_right = 40.0
+margin_bottom = 39.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemShop" type="Panel" parent="TabBar"]
+margin_left = 72.434
+margin_top = 491.0
+margin_right = 372.434
+margin_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabBar/ItemShop"]
+margin_left = 59.3086
+margin_top = 11.4791
+margin_right = 235.309
+margin_bottom = 70.4791
+custom_fonts/font = SubResource( 3 )
+text = "道具商店"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DailySale" type="Panel" parent="TabBar"]
+margin_left = 388.0
+margin_top = 491.0
+margin_right = 688.0
+margin_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabBar/DailySale"]
+margin_left = 64.3108
+margin_top = 13.6274
+margin_right = 240.311
+margin_bottom = 72.6274
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.133333, 0.419608, 0.701961, 1 )
+text = "每日特惠"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeShop" type="Panel" parent="TabBar"]
+margin_left = 701.0
+margin_top = 491.0
+margin_right = 1001.0
+margin_bottom = 573.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabBar/ChangeShop"]
+margin_left = 65.7688
+margin_top = 14.0933
+margin_right = 241.769
+margin_bottom = 73.0933
+custom_fonts/font = SubResource( 8 )
+text = "兑换商店"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopLabel" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shop_user_diamond" type="Sprite" parent="TopLabel"]
+position = Vector2( 775.383, 369.333 )
+texture = ExtResource( 8 )
+
+[node name="shop_user_coin" type="Sprite" parent="TopLabel"]
+position = Vector2( 307.955, 364.635 )
+texture = ExtResource( 9 )
+
+[node name="ItemGrid" type="GridContainer" parent="."]
+process_priority = 5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 37.6726
+margin_top = 646.575
+margin_right = 37.6726
+margin_bottom = -3.4248
+size_flags_horizontal = 15
+size_flags_vertical = 15
+size_flags_stretch_ratio = 0.0
+custom_constants/vseparation = 30
+custom_constants/hseparation = 30
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item1" type="TextureButton" parent="ItemGrid"]
+margin_right = 314.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 10 )
+
+[node name="img" type="TextureRect" parent="ItemGrid/Item1"]
+margin_left = 69.0
+margin_top = 114.0
+margin_right = 252.0
+margin_bottom = 266.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid/Item1"]
+margin_left = 60.0
+margin_top = 390.0
+margin_right = 131.0
+margin_bottom = 467.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priceLabel" type="Label" parent="ItemGrid/Item1"]
+margin_left = 127.0
+margin_top = 394.0
+margin_right = 313.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 10 )
+text = "300"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item2" type="TextureButton" parent="ItemGrid"]
+margin_left = 344.0
+margin_right = 658.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 10 )
+
+[node name="img" type="TextureRect" parent="ItemGrid/Item2"]
+margin_left = 69.0
+margin_top = 114.0
+margin_right = 252.0
+margin_bottom = 266.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid/Item2"]
+margin_left = 60.0
+margin_top = 390.0
+margin_right = 131.0
+margin_bottom = 467.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priceLabel" type="Label" parent="ItemGrid/Item2"]
+margin_left = 127.0
+margin_top = 394.0
+margin_right = 313.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 10 )
+text = "300"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item3" type="TextureButton" parent="ItemGrid"]
+margin_left = 688.0
+margin_right = 1002.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 10 )
+
+[node name="img" type="TextureRect" parent="ItemGrid/Item3"]
+margin_left = 69.0
+margin_top = 114.0
+margin_right = 252.0
+margin_bottom = 266.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid/Item3"]
+margin_left = 60.0
+margin_top = 390.0
+margin_right = 131.0
+margin_bottom = 467.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priceLabel" type="Label" parent="ItemGrid/Item3"]
+margin_left = 127.0
+margin_top = 394.0
+margin_right = 313.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 10 )
+text = "300"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item4" type="TextureButton" parent="ItemGrid"]
+margin_top = 530.0
+margin_right = 314.0
+margin_bottom = 1030.0
+texture_normal = ExtResource( 10 )
+
+[node name="img" type="TextureRect" parent="ItemGrid/Item4"]
+margin_left = 69.0
+margin_top = 114.0
+margin_right = 252.0
+margin_bottom = 266.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid/Item4"]
+margin_left = 60.0
+margin_top = 390.0
+margin_right = 131.0
+margin_bottom = 467.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priceLabel" type="Label" parent="ItemGrid/Item4"]
+margin_left = 127.0
+margin_top = 394.0
+margin_right = 313.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 10 )
+text = "300"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item5" type="TextureButton" parent="ItemGrid"]
+margin_left = 344.0
+margin_top = 530.0
+margin_right = 658.0
+margin_bottom = 1030.0
+texture_normal = ExtResource( 10 )
+
+[node name="img" type="TextureRect" parent="ItemGrid/Item5"]
+margin_left = 69.0
+margin_top = 114.0
+margin_right = 252.0
+margin_bottom = 266.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid/Item5"]
+margin_left = 60.0
+margin_top = 390.0
+margin_right = 131.0
+margin_bottom = 467.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priceLabel" type="Label" parent="ItemGrid/Item5"]
+margin_left = 127.0
+margin_top = 394.0
+margin_right = 313.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 10 )
+text = "300"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item6" type="TextureButton" parent="ItemGrid"]
+margin_left = 688.0
+margin_top = 530.0
+margin_right = 1002.0
+margin_bottom = 1030.0
+texture_normal = ExtResource( 10 )
+
+[node name="img" type="TextureRect" parent="ItemGrid/Item6"]
+margin_left = 69.0
+margin_top = 114.0
+margin_right = 252.0
+margin_bottom = 266.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ItemGrid/Item6"]
+margin_left = 60.0
+margin_top = 390.0
+margin_right = 131.0
+margin_bottom = 467.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="priceLabel" type="Label" parent="ItemGrid/Item6"]
+margin_left = 127.0
+margin_top = 394.0
+margin_right = 313.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 10 )
+text = "300"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="."]
+margin_left = 37.0876
+margin_top = 66.7578
+margin_right = 237.088
+margin_bottom = 266.758
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pop" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="item" parent="pop" index="0"]
+margin_left = 140.0
+margin_top = 220.0
+margin_right = 406.0
+margin_bottom = 394.0
+stretch_mode = 6
+
+[node name="Lottery" parent="." instance=ExtResource( 13 )]
+visible = false
+anchor_top = -0.003136
+anchor_bottom = 0.996864
+margin_left = -3.60498
+margin_top = 11.8362
+margin_right = -285.605
+margin_bottom = -1408.16
+rect_scale = Vector2( 0.8, 0.8 )
+
+[node name="shop_box" parent="Lottery" index="1"]
+margin_left = 328.818
+margin_top = 1530.94
+margin_right = 984.818
+margin_bottom = 2011.94
+[connection signal="gui_input" from="TabBar/ItemShop" to="." method="_on_ItemShop_gui_input"]
+[connection signal="gui_input" from="TabBar/DailySale" to="." method="_on_DailySale_gui_input"]
+[connection signal="gui_input" from="TabBar/ChangeShop" to="." method="_on_ChangeShop_gui_input"]
+[connection signal="pressed" from="ItemGrid/Item1" to="." method="_on_Item_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="ItemGrid/Item2" to="." method="_on_Item_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="ItemGrid/Item3" to="." method="_on_Item_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="ItemGrid/Item4" to="." method="_on_Item_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="ItemGrid/Item5" to="." method="_on_Item_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="ItemGrid/Item6" to="." method="_on_Item_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+
+[editable path="pop"]
+
+[editable path="Lottery"]

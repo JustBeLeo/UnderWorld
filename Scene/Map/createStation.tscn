@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Map/createStation.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Map/station_point.tscn" type="PackedScene" id=2]
+
+[node name="createStation" type="Node2D"]
+position = Vector2( 574.479, -81.7357 )
+z_index = 2
+script = ExtResource( 1 )
+
+[node name="station_point" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -0.602086, -0.341221 )
+z_index = 1

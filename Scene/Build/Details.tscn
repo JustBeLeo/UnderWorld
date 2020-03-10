@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://module/BackGroundNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asserts/Images/back.png" type="Texture" id=3]
+[ext_resource path="res://module/metroSC.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Asserts/ttf/msyh.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="Details" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGroundNode" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4.61475, -22.2875 )
+
+[node name="Top" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="Top"]
+margin_left = 31.2402
+margin_top = 24.5458
+margin_right = 231.24
+margin_bottom = 224.546
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Top"]
+margin_left = 145.044
+margin_top = 22.3144
+margin_right = 325.044
+margin_bottom = 82.3144
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "详情页面"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_bottom" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 969.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="metroSC" parent="." instance=ExtResource( 9 )]
+margin_left = -319.0
+margin_top = 597.0
+margin_right = 1074.0
+margin_bottom = 853.0
+[connection signal="pressed" from="Top/back" to="." method="_on_back_pressed"]

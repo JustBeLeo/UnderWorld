@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scene/Personal/asserts/GUI/首页1.png" type="Texture" id=1]
+
+[node name="MainPageButton" type="HBoxContainer"]
+anchor_right = 1.0
+margin_right = -880.0
+margin_bottom = 200.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+margin_right = 200.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+texture = ExtResource( 1 )

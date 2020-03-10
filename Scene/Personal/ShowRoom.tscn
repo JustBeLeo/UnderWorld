@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Personal/asserts/font/simkai.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="ShowRoomButton" type="HBoxContainer"]
+margin_left = 520.0
+margin_right = 925.0
+margin_bottom = 200.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 52.0
+margin_right = 352.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 200 )
+custom_fonts/font = SubResource( 1 )
+text = "陈列室"
+valign = 1

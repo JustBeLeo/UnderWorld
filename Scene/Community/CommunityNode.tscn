@@ -1,0 +1,188 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scene/Community/CommunityNode.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Shop/Asserts/shop_background.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Shop/Asserts/shop_bottom_backguroud.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Shop/Asserts/shop_middle_background.png" type="Texture" id=4]
+[ext_resource path="res://Asserts/Images/back.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Community/friendNode.tscn" type="PackedScene" id=7]
+
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.133333, 0.419608, 0.701961, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 44
+use_mipmaps = true
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.945098, 0.972549, 0.992157, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 44
+outline_color = Color( 0.133333, 0.419608, 0.701961, 1 )
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 44
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 40
+font_data = SubResource( 9 )
+
+[node name="CommunityNode" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.36353
+margin_top = 13.4542
+margin_right = 3.36353
+margin_bottom = 13.4541
+script = ExtResource( 1 )
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shop_background" type="Sprite" parent="Background"]
+position = Vector2( 540, 960 )
+texture = ExtResource( 2 )
+
+[node name="shop_bottom_backguroud" type="Sprite" parent="Background"]
+visible = false
+position = Vector2( 543.231, 965.045 )
+scale = Vector2( 1.01591, 1.00526 )
+texture = ExtResource( 3 )
+
+[node name="shop_middle_background" type="Sprite" parent="Background"]
+position = Vector2( 539.927, 140.851 )
+scale = Vector2( 1.00382, 0.733096 )
+texture = ExtResource( 4 )
+
+[node name="TabBar" type="Control" parent="."]
+margin_top = -289.087
+margin_right = 40.0
+margin_bottom = -249.087
+
+[node name="addFriend" type="Panel" parent="TabBar"]
+margin_left = 72.434
+margin_top = 490.5
+margin_right = 372.434
+margin_bottom = 572.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="TabBar/addFriend"]
+margin_left = 59.3086
+margin_top = 12.4791
+margin_right = 235.309
+margin_bottom = 71.4791
+custom_fonts/font = SubResource( 3 )
+text = "添加好友"
+align = 1
+valign = 1
+
+[node name="friendList" type="Panel" parent="TabBar"]
+margin_left = 388.0
+margin_top = 491.5
+margin_right = 688.0
+margin_bottom = 573.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" type="Label" parent="TabBar/friendList"]
+margin_left = 62.0427
+margin_top = 14.9386
+margin_right = 238.043
+margin_bottom = 73.9386
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.133333, 0.419608, 0.701961, 1 )
+text = "好友列表"
+align = 1
+valign = 1
+
+[node name="organize" type="Panel" parent="TabBar"]
+margin_left = 701.0
+margin_top = 490.5
+margin_right = 1001.0
+margin_bottom = 572.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="TabBar/organize"]
+margin_left = 65.7688
+margin_top = 14.0933
+margin_right = 241.769
+margin_bottom = 73.0933
+custom_fonts/font = SubResource( 8 )
+text = "地铁部落"
+align = 1
+valign = 1
+
+[node name="back" type="TextureButton" parent="."]
+margin_left = 37.0876
+margin_top = 66.7578
+margin_right = 237.088
+margin_bottom = 266.758
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 1827.0
+margin_right = 1057.0
+margin_bottom = 1941.0
+custom_fonts/font = SubResource( 10 )
+text = "I'm not moving"
+
+[node name="SC" type="ScrollContainer" parent="."]
+margin_top = 317.0
+margin_right = 1066.0
+margin_bottom = 1922.0
+
+[node name="VC" type="VBoxContainer" parent="SC"]
+margin_right = 900.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 900, 1080 )
+custom_constants/separation = 150
+
+[node name="Panel" parent="SC/VC" instance=ExtResource( 7 )]
+margin_right = 900.0
+margin_bottom = 0.0
+
+[node name="Panel2" parent="SC/VC" instance=ExtResource( 7 )]
+margin_top = 150.0
+margin_right = 900.0
+margin_bottom = 150.0
+
+[node name="Panel3" parent="SC/VC" instance=ExtResource( 7 )]
+margin_top = 300.0
+margin_right = 900.0
+margin_bottom = 300.0
+[connection signal="gui_input" from="TabBar/addFriend" to="." method="_on_ItemShop_gui_input"]
+[connection signal="gui_input" from="TabBar/friendList" to="." method="_on_DailySale_gui_input"]
+[connection signal="gui_input" from="TabBar/organize" to="." method="_on_ChangeShop_gui_input"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

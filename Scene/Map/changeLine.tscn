@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scene/Map/changeLine.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Map/assets/white.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Map/icon.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Map/assets/all.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Map/assets/1号.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Map/assets/2号.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Map/assets/simkai.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 7 )
+
+[node name="changeLine" type="MarginContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.15839
+margin_top = -147.841
+margin_right = 2.15845
+margin_bottom = 2.15869
+rect_min_size = Vector2( 1080, 0 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 535.465, 84.9692 )
+scale = Vector2( 0.828667, 0.162728 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1080.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 360, 150 )
+
+[node name="dragLabel" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 360, 0 )
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/dragLabel"]
+margin_left = 522.0
+margin_right = 558.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 36, 36 )
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 1080.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 360, 10 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 1080.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 1080, 60 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="allLine" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 204.0
+margin_right = 284.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 4 )
+expand = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 288.0
+margin_right = 488.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="Line1" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 492.0
+margin_right = 572.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 5 )
+expand = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 576.0
+margin_right = 776.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="Line2" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 780.0
+margin_right = 860.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 118.0
+margin_right = 1080.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer2"]
+margin_right = 1080.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 1080, 0 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "点击选择不同的线路"
+align = 1
+[connection signal="pressed" from="VBoxContainer/dragLabel/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/allLine" to="." method="_on_allLine_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Line1" to="." method="_on_Line1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Line2" to="." method="_on_Line2_pressed"]

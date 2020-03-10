@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scene/Map/station_point.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Map/assets/普通店.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Map/assets/宝箱.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Map/assets/点位.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Asserts/ttf/汉仪细等线.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[node name="station_point" type="Node2D"]
+z_index = 2
+script = ExtResource( 1 )
+
+[node name="白点" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 5.0
+margin_bottom = 5.0
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -8.0
+margin_top = 13.0
+margin_right = 8.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -25.7485
+margin_top = -27.0781
+margin_right = 11.2515
+margin_bottom = -15.0781
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="box" type="TextureButton" parent="."]
+visible = false
+margin_left = -13.0977
+margin_top = -13.3211
+margin_right = 12.9023
+margin_bottom = 14.6789
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="point" type="TextureRect" parent="."]
+visible = false
+margin_left = -14.0603
+margin_top = -30.8054
+margin_right = 12.9397
+margin_bottom = 1.1946
+texture = ExtResource( 4 )
+expand = true
+[connection signal="pressed" from="白点" to="." method="_on__pressed"]
+[connection signal="toggled" from="白点" to="." method="_on__toggled"]
+[connection signal="pressed" from="box" to="." method="_on_box_pressed"]

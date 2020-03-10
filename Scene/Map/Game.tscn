@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/Map/背景.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Map/Waypoints.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Map/MovingPlatform.tscn" type="PackedScene" id=3]
+
+[node name="Game" type="Node"]
+
+[node name="背景" type="Sprite" parent="."]
+position = Vector2( 195.75, 301.773 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Waypoints" parent="." instance=ExtResource( 2 )]
+position = Vector2( 470.734, 847.25 )
+line_color = Color( 0.541176, 0.67451, 0.203922, 1 )
+triangle_color = Color( 0.492188, 0.833375, 1, 1 )
+
+[node name="A1站" parent="Waypoints" index="0"]
+position = Vector2( -271.195, -863.503 )
+
+[node name="B1站" parent="Waypoints" index="1"]
+position = Vector2( -272.711, -807.99 )
+
+[node name="C1站" parent="Waypoints" index="2"]
+position = Vector2( -273.864, -778.857 )
+
+[node name="重复的站1" parent="Waypoints" index="3"]
+position = Vector2( -293.786, -734.289 )
+
+[node name="D1站" parent="Waypoints" index="4"]
+position = Vector2( -293.83, -704.179 )
+
+[node name="E1站" parent="Waypoints" index="5"]
+position = Vector2( -293.576, -674.171 )
+
+[node name="A2站" parent="Waypoints" index="6"]
+position = Vector2( -293.786, -629.088 )
+
+[node name="B2站" parent="Waypoints" index="7"]
+position = Vector2( -294.305, -587.182 )
+
+[node name="重复的站2" parent="Waypoints" index="8"]
+position = Vector2( -280.671, -560.376 )
+
+[node name="C2站" parent="Waypoints" index="9"]
+position = Vector2( -319.83, -495.981 )
+
+[node name="D2站" parent="Waypoints" index="10"]
+position = Vector2( -358.223, -467.365 )
+
+[node name="E2站" parent="Waypoints" index="11"]
+position = Vector2( -320.505, -434.092 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 177.158, 173.079 )
+speed = 50.0
+waypoints_path = NodePath("../Waypoints")
+
+[node name="Timer" parent="MovingPlatform" index="1"]
+wait_time = 2.0
+
+[node name="icon" parent="MovingPlatform" index="2"]
+position = Vector2( -0.158691, 0.143921 )
+
+[editable path="Waypoints"]
+
+[editable path="MovingPlatform"]

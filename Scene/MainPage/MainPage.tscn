@@ -1,0 +1,287 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scene/MainPage/MainPage.gd" type="Script" id=1]
+[ext_resource path="res://module/BackGroundNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/MainPage/MainAsserts/商店.png" type="Texture" id=3]
+[ext_resource path="res://Scene/MainPage/MainAsserts/地球.png" type="Texture" id=4]
+[ext_resource path="res://Scene/MainPage/MainAsserts/社交.png" type="Texture" id=5]
+[ext_resource path="res://module/HomeData.tscn" type="PackedScene" id=6]
+[ext_resource path="res://module/metroSC.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/MainPage/MainAsserts/panel_diamand.png" type="Texture" id=8]
+[ext_resource path="res://Scene/MainPage/MainAsserts/panel_coin.png" type="Texture" id=9]
+[ext_resource path="res://Asserts/Images/head2.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0.607843 )
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_color = Color( 0.0588235, 0.890196, 1, 1 )
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.572549 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.901961, 0.901961, 0.901961, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.984314, 0.984314, 0.984314, 0.258824 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 45
+outline_size = 1
+extra_spacing_char = 2
+font_data = SubResource( 9 )
+
+[node name="MainPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGroundNode" parent="." instance=ExtResource( 2 )]
+position = Vector2( -7.86292, -19.2659 )
+
+[node name="User" type="TextureButton" parent="."]
+margin_left = 47.4783
+margin_top = 25.6012
+margin_right = 442.478
+margin_bottom = 140.601
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="User"]
+margin_left = -1.15607
+margin_top = 1.55165
+margin_right = 108.844
+margin_bottom = 111.552
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="User"]
+margin_left = 80.0
+margin_top = 23.0
+margin_right = 391.0
+margin_bottom = 90.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" type="TextureButton" parent="User"]
+margin_left = 4.1828
+margin_top = 5.76756
+margin_right = 104.183
+margin_bottom = 105.768
+rect_pivot_offset = Vector2( 50, 50 )
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="User"]
+margin_left = 117.462
+margin_top = 29.1694
+margin_right = 369.462
+margin_bottom = 84.1694
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.294118, 0.294118, 0.294118, 1 )
+text = "一个男人"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resource" type="Control" parent="."]
+margin_left = 717.546
+margin_top = 5.1817
+margin_right = 1060.55
+margin_bottom = 892.182
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="panel_coin" type="Sprite" parent="Resource"]
+position = Vector2( 180, 73.6438 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Resource/panel_coin"]
+margin_left = -57.0
+margin_top = -24.0
+margin_right = 108.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 6 )
+text = "99999"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_diamand" type="Sprite" parent="Resource"]
+position = Vector2( 180, 168.854 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 8 )
+
+[node name="Label2" type="Label" parent="Resource/panel_diamand"]
+margin_left = -57.0
+margin_top = -24.0
+margin_right = 108.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 6 )
+text = "99999"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_top = 947.0
+margin_right = 1080.0
+margin_bottom = 1914.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SwichBar" type="Panel" parent="."]
+margin_left = 1.50745
+margin_top = 1623.05
+margin_right = 1081.51
+margin_bottom = 1913.05
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shop" type="TextureButton" parent="SwichBar"]
+margin_left = 67.8747
+margin_top = 44.95
+margin_right = 271.875
+margin_bottom = 220.95
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SwichBar/Shop"]
+margin_left = 3.01465
+margin_top = 178.0
+margin_right = 189.015
+margin_bottom = 241.493
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "购物广场"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="TextureButton" parent="SwichBar"]
+margin_left = 470.144
+margin_top = 44.95
+margin_right = 622.144
+margin_bottom = 215.95
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="SwichBar/Map"]
+margin_left = -12.0588
+margin_top = 178.0
+margin_right = 173.941
+margin_bottom = 244.507
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "地铁世界"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Community" type="TextureButton" parent="SwichBar"]
+margin_left = 818.079
+margin_top = 44.95
+margin_right = 1018.08
+margin_bottom = 218.95
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="SwichBar/Community"]
+margin_left = 16.5808
+margin_top = 178.0
+margin_right = 202.581
+margin_bottom = 241.493
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "社交中心"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Datas" parent="." instance=ExtResource( 6 )]
+margin_left = 57.6213
+margin_top = 1012.64
+margin_right = 1027.62
+margin_bottom = 1352.64
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CarSC" parent="." instance=ExtResource( 7 )]
+margin_left = -319.033
+margin_top = 597.777
+margin_right = 1073.97
+margin_bottom = 853.777
+[connection signal="pressed" from="User/Avatar" to="." method="_on_Avatar_pressed"]
+[connection signal="gui_input" from="SwichBar/Shop" to="." method="_on_Shop_gui_input"]
+[connection signal="gui_input" from="SwichBar/Community" to="." method="_on_Community_gui_input"]
+
+[editable path="BackGroundNode"]
+
+[editable path="Datas"]
+
+[editable path="CarSC"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scene/Build/Asserts/head_blur.png" type="Texture" id=1]
+[ext_resource path="res://Asserts/Images/item_coins.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Build/item.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Asserts/ttf/HYHanHeiW.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 1 )
+
+[node name="item" type="TextureButton"]
+margin_right = 237.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="img" type="TextureRect" parent="."]
+anchor_right = 1.0
+margin_left = -0.0185242
+margin_top = -0.0832276
+margin_bottom = 101.917
+rect_pivot_offset = Vector2( 118.5, 51 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="TextureRect" parent="."]
+margin_left = 160.383
+margin_top = 123.121
+margin_right = 231.383
+margin_bottom = 195.121
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 56.6849
+margin_top = 116.919
+margin_right = 134.685
+margin_bottom = 170.919
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_item_pressed"]

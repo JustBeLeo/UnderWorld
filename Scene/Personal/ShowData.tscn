@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PeopleNum.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Speed.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Personal/asserts/font/simkai.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="ShowData" type="HBoxContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 538.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PeopleNum" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 538.0
+margin_bottom = 80.0
+
+[node name="Speed" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_top = 84.0
+margin_right = 538.0
+margin_bottom = 164.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 542.0
+margin_right = 1080.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+margin_right = 538.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+text = "文泽路->高沙"
+align = 1
+valign = 1

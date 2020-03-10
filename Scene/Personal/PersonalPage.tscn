@@ -1,0 +1,234 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scene/Personal/TextureButton.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Personal/data.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Personal/asserts/GUI/data.png" type="Texture" id=3]
+[ext_resource path="res://Scene/Personal/asserts/font/simkai.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scene/Personal/asserts/GUI/个人主页_背景.png" type="Texture" id=5]
+[ext_resource path="res://Scene/Personal/asserts/GUI/top.png" type="Texture" id=6]
+[ext_resource path="res://Scene/Personal/asserts/GUI/成就.png" type="Texture" id=7]
+[ext_resource path="res://Scene/Personal/asserts/GUI/name.png" type="Texture" id=8]
+[ext_resource path="res://Scene/Personal/asserts/GUI/car.png" type="Texture" id=9]
+[ext_resource path="res://Scene/Personal/asserts/GUI/返回.png" type="Texture" id=10]
+[ext_resource path="res://Scene/Personal/asserts/GUI/achievement.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1080.0
+margin_bottom = 1920.0
+
+[node name="bg" type="TextureRect" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 1920.0
+texture = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/bg"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="TextureButton" parent="VBoxContainer/bg/VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 213.0
+texture_normal = ExtResource( 6 )
+
+[node name="name" type="TextureRect" parent="VBoxContainer/bg/VBoxContainer"]
+margin_top = 217.0
+margin_right = 1080.0
+margin_bottom = 502.0
+texture = ExtResource( 8 )
+
+[node name="car" type="TextureRect" parent="VBoxContainer/bg/VBoxContainer"]
+margin_top = 506.0
+margin_right = 1080.0
+margin_bottom = 1215.0
+texture = ExtResource( 9 )
+
+[node name="achievement" type="TextureRect" parent="VBoxContainer/bg/VBoxContainer"]
+visible = false
+margin_top = 1219.0
+margin_right = 1080.0
+margin_bottom = 1935.0
+texture = ExtResource( 11 )
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/bg"]
+margin_left = 710.83
+margin_top = 301.468
+margin_right = 922.83
+margin_bottom = 411.468
+texture_normal = ExtResource( 7 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data" type="TextureRect" parent="VBoxContainer/bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1216.0
+margin_bottom = 12.0
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VBoxContainer/bg/data"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/bg/data/Control"]
+margin_left = 123.61
+margin_top = 236.875
+margin_right = 243.61
+margin_bottom = 259.875
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "乘坐地铁出行"
+
+[node name="Label" type="Label" parent="VBoxContainer/bg/data/Control"]
+margin_left = 134.128
+margin_top = 280.586
+margin_right = 242.128
+margin_bottom = 357.586
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1234km"
+
+[node name="Control2" type="Control" parent="VBoxContainer/bg/data"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/bg/data/Control2"]
+margin_left = 358.955
+margin_top = 236.875
+margin_right = 478.955
+margin_bottom = 259.875
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "乘坐地铁出行"
+
+[node name="Label" type="Label" parent="VBoxContainer/bg/data/Control2"]
+margin_left = 366.752
+margin_top = 279.226
+margin_right = 461.752
+margin_bottom = 356.226
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "66 次
+"
+
+[node name="Control3" type="Control" parent="VBoxContainer/bg/data"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/bg/data/Control3"]
+margin_left = 820.955
+margin_top = 239.875
+margin_right = 940.955
+margin_bottom = 262.875
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "最晚出行时间"
+
+[node name="Label" type="Label" parent="VBoxContainer/bg/data/Control3"]
+margin_left = 834.752
+margin_top = 277.226
+margin_right = 929.752
+margin_bottom = 354.226
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "22:00
+"
+
+[node name="Control4" type="Control" parent="VBoxContainer/bg/data"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/bg/data/Control4"]
+margin_left = 586.955
+margin_top = 238.875
+margin_right = 706.955
+margin_bottom = 261.875
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "最早出行时间"
+
+[node name="Label" type="Label" parent="VBoxContainer/bg/data/Control4"]
+margin_left = 595.752
+margin_top = 279.226
+margin_right = 690.752
+margin_bottom = 356.226
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = " 6:00
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+margin_right = 1080.0
+margin_bottom = 1920.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+visible = false
+margin_right = 1080.0
+
+[node name="back" type="TextureButton" parent="VBoxContainer2/HBoxContainer"]
+visible = false
+margin_right = 34.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 10 )
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer"]
+visible = false
+margin_right = 80.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "个人主页
+"
+
+[node name="quit" type="TextureButton" parent="VBoxContainer2/HBoxContainer"]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+margin_right = 1080.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2"]
+margin_top = 4.0
+margin_right = 1080.0
+margin_bottom = 4.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer2"]
+margin_top = 8.0
+margin_right = 1080.0
+margin_bottom = 8.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/CenterContainer2"]
+visible = false
+margin_left = 480.0
+margin_top = -23.0
+margin_right = 600.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "最晚出行时间
+"
+[connection signal="pressed" from="VBoxContainer/bg/VBoxContainer/top" to="VBoxContainer/bg/TextureButton" method="_on_top_pressed"]
+[connection signal="pressed" from="VBoxContainer/bg/TextureButton" to="VBoxContainer/bg/TextureButton" method="_on_TextureButton_pressed"]

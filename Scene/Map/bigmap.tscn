@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scene/Map/bigmap.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Map/assets/white.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Map/createStation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Map/gamePieces.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Map/userStation.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Map/changeLine.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/Map/change_button.tscn" type="PackedScene" id=7]
+
+[node name="bigmap" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.05176e-05
+margin_top = -1.39665
+margin_bottom = -1.39661
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 536.016, 945.5 )
+scale = Vector2( 0.830888, 2.36195 )
+z_index = -20
+texture = ExtResource( 2 )
+
+[node name="createStation" parent="." instance=ExtResource( 3 )]
+position = Vector2( 507.118, 73.1226 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+
+[node name="gamePieces" parent="." instance=ExtResource( 4 )]
+position = Vector2( 269.653, 55.7902 )
+z_index = 10
+
+[node name="userStation" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 242.178, 228.339 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="changeLine" parent="." instance=ExtResource( 6 )]
+margin_left = 0.0
+margin_top = -150.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="changeButton" parent="." instance=ExtResource( 7 )]
+position = Vector2( 879.256, 979.953 )
+scale = Vector2( 0.3, 0.3 )
+z_index = 5

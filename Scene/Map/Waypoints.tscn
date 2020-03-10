@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scene/Map/Waypoints.gd" type="Script" id=1]
+
+[node name="Waypoints" type="Node2D"]
+position = Vector2( 391.951, 544.494 )
+script = ExtResource( 1 )
+line_color = Color( 1, 1, 1, 1 )
+
+[node name="A1站" type="Position2D" parent="."]
+position = Vector2( -384.042, -301.763 )
+
+[node name="B1站" type="Position2D" parent="."]
+position = Vector2( -263.524, -322.626 )
+
+[node name="C1站" type="Position2D" parent="."]
+position = Vector2( -164.283, -368.386 )
+
+[node name="重复的站1" type="Position2D" parent="."]
+position = Vector2( -97.2191, -489.858 )
+
+[node name="D1站" type="Position2D" parent="."]
+position = Vector2( -115.632, -291.679 )
+
+[node name="E1站" type="Position2D" parent="."]
+position = Vector2( -324.643, 84.7101 )
+
+[node name="A2站" type="Position2D" parent="."]
+position = Vector2( -389.073, -147.674 )
+
+[node name="B2站" type="Position2D" parent="."]
+position = Vector2( -253.949, -205.119 )
+
+[node name="重复的站2" type="Position2D" parent="."]
+position = Vector2( -30.6401, -439.475 )
+
+[node name="C2站" type="Position2D" parent="."]
+position = Vector2( -131.922, -144.744 )
+
+[node name="D2站" type="Position2D" parent="."]
+position = Vector2( -4.08603, -139.338 )
+
+[node name="E2站" type="Position2D" parent="."]
+position = Vector2( -208.933, -28.4876 )
